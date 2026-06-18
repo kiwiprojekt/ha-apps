@@ -1,5 +1,5 @@
 name: "Kiviq Agent"
-version: "0.0.1"
+version: "0.0.2"
 slug: "ha_kiviq_agent"
 description: "Kiviq Server Monitoring Agent to report system statistics to a remote Kiviq Monitor"
 arch:
