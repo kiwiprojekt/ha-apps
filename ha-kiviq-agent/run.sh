@@ -10,5 +10,10 @@ export AGENT_TOKEN="$(jq -r '.agent_token // empty' "${OPTIONS}")"
 export REPORT_INTERVAL="$(jq -r '.report_interval // empty' "${OPTIONS}")"
 export AGENT_CA_DIR="/data"
 
+# With docker_api: true, Supervisor bind-mounts the host Docker socket at
+# /run/docker.sock. The agent's Docker client honours DOCKER_HOST, so point it
+# there (its default is /var/run/docker.sock, which isn't where HA mounts it).
+export DOCKER_HOST="unix:///run/docker.sock"
+
 bashio::log.info "Starting Kiviq Agent reporting to ${MONITOR_URL}..."
 exec /app/agent
