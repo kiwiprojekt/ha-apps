@@ -1,0 +1,21 @@
+name: "Kiviq Agent"
+version: "0.0.1"
+slug: "ha_kiviq_agent"
+description: "Kiviq Server Monitoring Agent to report system statistics to a remote Kiviq Monitor"
+arch:
+  - amd64
+  - aarch64
+init: false
+host_network: true
+host_pid: true
+docker_api: true
+map:
+  - share:rw
+options:
+  monitor_url: "https://your-monitor-address:9753"
+  agent_token: "your-agent-token"
+  report_interval: 5
+schema:
+  monitor_url: str
+  agent_token: password
+  report_interval: int

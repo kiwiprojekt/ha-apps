@@ -1,0 +1,25 @@
+name: "Kiviq Monitor"
+version: "0.0.1"
+slug: "ha_kiviq_monitor"
+description: "Lightweight, self-hosted server monitoring system"
+arch:
+  - amd64
+  - aarch64
+init: false
+ingress: true
+ingress_port: 9753
+panel_icon: "mdi:monitor-dashboard"
+map:
+  - share:rw
+options:
+  monitor_user: "admin"
+  monitor_password: "changeme"
+  seed_agent: true
+  seed_agent_name: "kiviq-local"
+  seed_agent_token: "kiviq-agent-token"
+schema:
+  monitor_user: str
+  monitor_password: password
+  seed_agent: bool
+  seed_agent_name: str
+  seed_agent_token: password
